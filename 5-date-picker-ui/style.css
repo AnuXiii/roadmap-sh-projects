@@ -1,0 +1,101 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: system-ui;
+}
+
+.container {
+	max-width: 420px;
+	padding: 2rem;
+	margin: 0 auto;
+}
+
+.form-control {
+	margin-bottom: 2rem;
+}
+
+input[type="date"] {
+	border: 1px solid rgb(12 12 12 / 0.5);
+	border-radius: 6px;
+	outline: none;
+	padding: 0.5rem;
+}
+
+body {
+	color: #121212;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 1.2rem;
+	background: #eee;
+	border-bottom: 2px solid rgb(12 12 12 / 0.3);
+	padding: 1rem;
+
+	i {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+}
+
+.date-picker {
+	border-radius: 6px;
+	box-shadow: 0 6px 14px rgb(12 12 12 / 0.1);
+	outline: 4px solid rgb(12 12 12 / 0.4);
+	font-size: 1.1rem;
+}
+
+.grid-box {
+	gap: 1rem;
+}
+
+.weeks {
+	font-weight: bold;
+	margin-top: 1rem;
+}
+
+.weeks,
+.days {
+	display: grid;
+	grid-template-columns: repeat(7, calc(100% / 7));
+	text-align: center;
+}
+
+.days {
+	span {
+		border: 1px solid rgb(12 12 12 / 0.2);
+		padding: 0.5rem;
+		cursor: pointer;
+		transition: 0.2s;
+		height: 100%;
+	}
+
+	span:hover {
+		background: rgb(8, 126, 230);
+		color: #f9f9f9;
+	}
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.flex {
+	display: flex;
+}
+
+.arrows {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+
+	i {
+		line-height: 0;
+	}
+}

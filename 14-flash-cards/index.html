@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="assests/images/logo.svg"
+			type="image/x-icon" />
+		<title>Frontend roadmap questions</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<!--  -->
+		<div class="container">
+			<div
+				id="app"
+				role="application">
+				<header class="flash-cards-header">
+					<h1 class="title">Javascript questions</h1>
+					<div class="progress">
+						<div
+							class="progress-inner"
+							style="width: 25%">
+							<p class="progress-percent">25%</p>
+						</div>
+						<div class="questions-count">
+							<span id="q-current-index">5</span>
+							<span>of</span>
+							<span id="q-all-counts">20</span>
+						</div>
+					</div>
+				</header>
+				<main
+					role="main"
+					class="main-cr">
+					<div class="flash-cards-container">
+						<div class="flash-card active">
+							<div class="question">
+								<p>What is the difference between var, let, and conts?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									The difference between var, let, and const is that var is function-scoped, while let and const are
+									block-scoped. Additionally, variables declared with const cannot be reassigned.
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is the difference between var, let, and const?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									The difference between var, let, and const is that var is function-scoped, while let and const are
+									block-scoped. Additionally, variables declared with const cannot be reassigned.
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is a closure in JavaScript?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									A closure is a function that has access to its own scope, the scope of the outer function, and the
+									global scope.
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is the event loop in JavaScript?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									The event loop is a mechanism that allows JavaScript to perform non-blocking operations by offloading
+									operations to the system kernel whenever possible.
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is the difference between == and === in JavaScript?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									The == operator compares values for equality after converting both values to a common type, while ===
+									compares both values and types without conversion.
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is a promise in JavaScript?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									A promise is an object that represents the eventual completion (or failure) of an asynchronous
+									operation and its resulting value.
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is the purpose of the array method map()?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									The map() method creates a new array populated with the results of calling a provided function on
+									every element in the calling array.
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is the difference between null and undefined?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									Null is an assignment value that means "no value" and must be assigned, while undefined means a
+									variable has been declared but not yet assigned a value.
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is the purpose of the JavaScript method call()?</p>
+							</div>
+							<div class="answer hidden">
+								<p>The call() method calls a function with a given this value and arguments provided individually.</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is the purpose of the JavaScript method apply()?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									The apply() method calls a function with a given this value, and arguments provided as an array (or an
+									array-like object).
+								</p>
+							</div>
+						</div>
+						<div class="flash-card">
+							<div class="question">
+								<p>What is the purpose of the JavaScript method bind()?</p>
+							</div>
+							<div class="answer hidden">
+								<p>
+									The bind() method creates a new function that, when called, has its this keyword set to the provided
+									value, with a given sequence of arguments preceding any provided when the new function is called.
+								</p>
+							</div>
+						</div>
+					</div>
+					<footer class="flash-cards-footer">
+						<ul class="flash-cards-nav">
+							<li>
+								<button id="previous">
+									<i class="fa-solid fa-arrow-left"></i>
+									<span class="previous">Previous</span>
+								</button>
+							</li>
+							<li>
+								<button id="card-answer-action">Show Answer</button>
+								<!-- Hide Answer hidden -->
+							</li>
+							<li>
+								<button id="next">
+									<span class="next">Next</span>
+									<i class="fa-solid fa-arrow-right"></i>
+								</button>
+							</li>
+						</ul>
+					</footer>
+				</main>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>

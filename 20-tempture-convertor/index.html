@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/vite.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Temperature Converter</title>
+		<link
+			rel="stylesheet"
+			href="src/style.css" />
+	</head>
+	<body>
+		<div id="app">
+			<!--  -->
+			<div class="container">
+				<div class="wrapper">
+					<div class="wrapper-left">
+						<h1 class="title">Enter Temperature</h1>
+						<div class="inputs-wrapper">
+							<div class="input-holder">
+								<label
+									class="label"
+									for="temp-input">
+									<span>Degree</span>
+									<input
+										type="number"
+										inputmode="numeric"
+										placeholder="0.00"
+										id="temp-input"
+										class="input"
+										name="temp-input"
+										autocomplete="off"
+										tabindex="0" />
+								</label>
+								<c-select
+									data-id="temp"
+									placeholder="&deg;C"
+									default="c"
+									options='[
+                            {"key": "&deg;c", "value": "c"}, 
+                            {"key": "&deg;f", "value": "f"},
+                            {"key": "k", "value": "k"}
+                        ]'></c-select>
+							</div>
+						</div>
+						<!--  -->
+						<div class="input-holder">
+							<label
+								class="label"
+								for="convert-input">
+								<span>Convert to</span>
+								<c-select
+									data-id="convert"
+									placeholder="Fahrenheit (&deg;F)"
+									default="f"
+									options='[
+                            {"key": "celsius (&deg;C)", "value": "c"}, 
+                            {"key": "fahrenheit (&deg;F)", "value": "f"},
+                            {"key": "kelvin (K)", "value": "k"}
+                        ]'></c-select>
+							</label>
+						</div>
+						<div class="btn-holder">
+							<button
+								id="convert-btn"
+								class="btn-primary">
+								Convert
+							</button>
+						</div>
+					</div>
+					<div class="wrapper-result">
+						<h2 class="result">
+							<p><span id="res">0.00</span> <span id="unit">&deg;F</span></p>
+						</h2>
+					</div>
+				</div>
+			</div>
+			<!--  -->
+		</div>
+		<script
+			type="module"
+			src="/src/main.js"></script>
+	</body>
+</html>

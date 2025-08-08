@@ -1,0 +1,33 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Restricted Textarea</title>
+
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="form-control">
+				<label for="textarea">Write your Message</label>
+				<textarea
+					name="textarea"
+					id="textarea"
+					class="textarea"
+					placeholder="Start typing..."
+					cols="50"
+					rows="5"></textarea>
+				<div class="counter">
+					<span class="length-count">0</span>
+					<div class="max-count">250</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>

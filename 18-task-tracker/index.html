@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no" />
+		<link
+			rel="shortcut icon"
+			href="./public/tracker.svg"
+			type="image/x-icon" />
+		<title>Task Manager 📝</title>
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<link
+			rel="stylesheet"
+			href="src/output.css" />
+	</head>
+	<body class="text-secondary text-lg font-pop font-normal">
+		<!-- create a loader -->
+		<script>
+			window.addEventListener("load", () => {
+				const blur = document.getElementById("blur");
+
+				setTimeout(() => {
+					blur.classList.add("hide");
+				}, 500);
+
+				blur.addEventListener("transitionend", () => {
+					blur.remove();
+				});
+			});
+		</script>
+		<div
+			class="blur-overlay fixed inset-0 duration-1000 backdrop-blur-md bg-primary/70 z-90 opacity-100 pointer-events-none flex justify-center items-center"
+			id="blur">
+			<div
+				class="w-20 h-20 rounded-full border-3 border-solid border-violet-500 border-l-transparent shadow-md shadow-violet-500/50 animate-spin"></div>
+		</div>
+		<!-- app start -->
+		<div
+			id="app"
+			class="relative">
+			<!-- app background -->
+			<div class="fixed inset-0 z-[-1] bg-[url('../public/background.svg')] bg-no-repeat bg-cover"></div>
+			<!-- navigation container -->
+			<div class="nav-container p-4 fixed w-full top-0 right-0 z-30">
+				<!-- navigation -->
+				<nav class="max-w-7xl mx-auto flex items-center justify-between gap-12">
+					<div class="logo">
+						<a
+							href="./"
+							class="logo relative flex justify-center items-center group">
+							<img
+								src="./public/logo.png"
+								class="w-20 h-20 mix-blend-multiply object-cover duration-200"
+								alt="logo" />
+							<span class="cyberpunk primary-linear z-[-1] absolute"></span>
+						</a>
+					</div>
+					<!-- menu button -->
+					<button
+						class="nav-control z-20 relative hidden justify-center items-center text-3xl p-2 border border-solid border-violet-200 cursor-pointer duration-200 rounded-lg max-[991px]:flex"
+						aria-label="menu"
+						title="open menu">
+						<ion-icon name="grid-outline"></ion-icon>
+					</button>
+					<!-- links list -->
+					<ul class="nav-items flex justify-between items-center gap-6 relative">
+						<div class="nav-items-inner flex gap-6 relative max-[991px]:flex-col max-[991px]:gap-12">
+							<div
+								class="line z-[-1] bg-violet-200 h-10 top-[-5px] duration-200 absolute rounded-lg pointer-events-none"></div>
+							<li>
+								<a
+									href="#about"
+									class="link p-4 capitalize duration-200 hover:text-violet-500 active:text-violet-500 target:text-violet-500 focus:text-violet-500"
+									aria-label="about"
+									title="about"
+									>about</a
+								>
+							</li>
+							<li>
+								<a
+									href="#futures"
+									class="link p-4 capitalize duration-200 hover:text-violet-500 active:text-violet-500 target:text-violet-500 focus:text-violet-500"
+									aria-label="futures"
+									title="futures"
+									>futures</a
+								>
+							</li>
+							<li>
+								<a
+									href="#faq"
+									class="link p-4 capitalize duration-200 hover:text-violet-500 active:text-violet-500 target:text-violet-500 focus:text-violet-500"
+									aria-label="FAQ"
+									title="FAQ"
+									>FAQ</a
+								>
+							</li>
+							<li>
+								<a
+									href="#contact"
+									class="link p-4 capitalize duration-200 hover:text-violet-500 active:text-violet-500 target:text-violet-500 focus:text-violet-500"
+									aria-label="contact"
+									title="contact"
+									>contact</a
+								>
+							</li>
+						</div>
+						<div class="flex items-center gap-6 max-[991px]:justify-center max-[991px]:w-full">
+							<li>
+								<a
+									href="pages/app.html"
+									class="primary-btn relative flex justify-center items-center gap-3 p-4 capitalize rounded-lg text-primary primary-linear duration-200 py-1 hover:bg-linear-to-l active:bg-linear-to-l target:bg-linear-to-l focus:bg-linear-to-l">
+									<span>Start</span>
+									<ion-icon name="flash-outline"></ion-icon>
+									<span
+										class="absolute inset-0 scale-y-110 scale-x-105 rounded-lg bg-conic/decreasing from-violet-700 via-lime-300 to-violet-700 z-[-1]"></span>
+								</a>
+							</li>
+						</div>
+					</ul>
+				</nav>
+			</div>
+			<!-- about section -->
+			<div
+				data-section="section-1"
+				class="max-w-7xl mx-auto p-4 my-40"
+				id="about">
+				<header class="grid grid-cols-2 gap-12 items-center max-[991px]:grid-cols-1">
+					<div class="flex flex-col gap-12">
+						<div class="flex flex-col gap-6">
+							<h1
+								class="text-4xl font-semibold tracking-widest flex items-center gap-3 max-[580px]:justify-center max-[580px]:text-center">
+								<img
+									src="./public/tracker.svg"
+									alt=""
+									class="w-12 h-12" />
+								<span>About Task Tracker</span>
+							</h1>
+						</div>
+						<ul class="divide-y-1 divide-dashed divide-secondary/20 flex flex-col gap-6">
+							<li
+								class="bg-neutral-900 backdrop-blur-sm p-4 text-secondary/80 rounded-lg shadow-lg flex items-center gap-3">
+								<span
+									class="flex justify-center items-center border-2 border-solid border-white/40 w-max h-5 py-4 px-2">
+									<span class="font-mono font-thin bg-neutral-900 py-1.5 px-1 text-shadow-secondary/70">1</span>
+								</span>
+								<span>go to your browser header</span>
+							</li>
+							<li
+								class="bg-neutral-900 backdrop-blur-sm p-4 text-secondary/80 rounded-lg shadow-lg flex items-center gap-3">
+								<span
+									class="flex justify-center items-center border-2 border-solid border-white/40 w-max h-5 py-4 px-2">
+									<span class="font-mono font-thin bg-neutral-900 py-1.5 px-1 text-shadow-secondary/70">2</span>
+								</span>
+								<span>tap monitor button | install app</span>
+							</li>
+							<li
+								class="bg-neutral-900 backdrop-blur-sm p-4 text-secondary/80 rounded-lg shadow-lg flex items-center gap-3">
+								<span
+									class="flex justify-center items-center border-2 border-solid border-white/40 w-max h-5 py-4 px-2">
+									<span class="font-mono font-thin bg-neutral-900 py-1.5 px-1 text-shadow-secondary/70">3</span>
+								</span>
+								<span>tap install application</span>
+							</li>
+							<li
+								class="bg-neutral-900 backdrop-blur-sm p-4 text-secondary/80 rounded-lg shadow-lg flex items-center gap-3">
+								<span
+									class="flex justify-center items-center border-2 border-solid border-white/40 w-max h-5 py-4 px-2">
+									<span class="font-mono font-thin bg-neutral-900 py-1.5 px-1 text-shadow-secondary/70">4</span>
+								</span>
+								<span>open application on your device</span>
+							</li>
+							<span></span>
+						</ul>
+					</div>
+					<div class="grid grid-cols-12 gap-6">
+						<img
+							src="./public/main-bg.png"
+							alt=""
+							class="border border-solid border-violet-600 col-span-12 w-full h-full rounded-lg drop-shadow-2xl drop-shadow-black" />
+						<img
+							src="./public/sec-bg.png"
+							alt=""
+							class="border border-solid border-violet-600 col-span-6 w-full h-full rounded-lg drop-shadow-2xl drop-shadow-black" />
+						<img
+							src="./public/acc-bg.png"
+							alt=""
+							class="border border-solid border-violet-600 col-span-6 w-full h-full rounded-lg drop-shadow-2xl drop-shadow-black" />
+					</div>
+				</header>
+			</div>
+			<!-- futures -->
+			<div
+				data-section="section-2"
+				class="max-w-7xl mx-auto p-4 my-40"
+				id="futures">
+				<div class="flex flex-col gap-12">
+					<h1 class="text-5xl text-center font-semibold tracking-widest primary-title max-[991px]:text-3xl">
+						The Futures
+					</h1>
+					<div class="grid-container grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+						<div
+							class="box duration-200 relative flex flex-col gap-6 bg-primary p-4 border border-solid border-secondary/20 rounded-lg shadow-lg shadow-primary">
+							<header class="flex items-center gap-3">
+								<img
+									src="./public/icons/remove-note.png"
+									alt="remove note"
+									class="w-12 h-12 drop-shadow-lg drop-shadow-violet-900/10" />
+								<h2 class="text-2xl text-secondary/90">Removeable Tasks</h2>
+							</header>
+							<p class="text-base leading-8 text-secondary/70 font-normal">
+								you can remove easly your tasks without refresh on page.
+							</p>
+						</div>
+						<div
+							class="box duration-200 relative flex flex-col gap-6 bg-primary p-4 border border-solid border-secondary/20 rounded-lg shadow-lg shadow-primary">
+							<header class="flex items-center gap-3">
+								<img
+									src="./public/icons/high-quality.png"
+									alt="high quality"
+									class="w-12 h-12 drop-shadow-lg drop-shadow-violet-900/10" />
+								<h2 class="text-2xl text-secondary/90">High Quality</h2>
+							</header>
+							<p class="text-base leading-8 text-secondary/70 font-normal">
+								we are created best permormence application just for you.
+							</p>
+						</div>
+						<div
+							class="box duration-200 relative flex flex-col gap-6 bg-primary p-4 border border-solid border-secondary/20 rounded-lg shadow-lg shadow-primary">
+							<header class="flex items-center gap-3">
+								<img
+									src="./public/icons/live-update.png"
+									alt="live update"
+									class="w-12 h-12 drop-shadow-lg drop-shadow-violet-900/10" />
+								<h2 class="text-2xl text-secondary/90">Live Update</h2>
+							</header>
+							<p class="text-base leading-8 text-secondary/70 font-normal">live update page when you add a new task.</p>
+						</div>
+						<div
+							class="box duration-200 relative flex flex-col gap-6 bg-primary p-4 border border-solid border-secondary/20 rounded-lg shadow-lg shadow-primary">
+							<header class="flex items-center gap-3">
+								<img
+									src="./public/icons/responsive.png"
+									alt="responsive design"
+									class="w-12 h-12 drop-shadow-lg drop-shadow-violet-900/10" />
+								<h2 class="text-2xl text-secondary/90">Responsive Design</h2>
+							</header>
+							<p class="text-base leading-8 text-secondary/70 font-normal">
+								high complexibility system and best user interface & user exprience.
+							</p>
+						</div>
+						<div
+							class="box duration-200 relative flex flex-col gap-6 bg-primary p-4 border border-solid border-secondary/20 rounded-lg shadow-lg shadow-primary">
+							<header class="flex items-center gap-3">
+								<img
+									src="./public/icons/save.png"
+									alt="local save"
+									class="w-12 h-12 drop-shadow-lg drop-shadow-violet-900/10" />
+								<h2 class="text-2xl text-secondary/90">Local Save</h2>
+							</header>
+							<p class="text-base leading-8 text-secondary/70 font-normal">
+								all tasks save on your device local storage.
+							</p>
+						</div>
+						<div
+							class="box duration-200 relative flex flex-col gap-6 bg-primary p-4 border border-solid border-secondary/20 rounded-lg shadow-lg shadow-primary">
+							<header class="flex items-center gap-3">
+								<img
+									src="./public/icons/pwa.png"
+									alt="pwa application"
+									class="w-12 h-12 drop-shadow-lg drop-shadow-violet-900/10" />
+								<h2 class="text-2xl text-secondary/90">PWA Application</h2>
+							</header>
+							<p class="text-base leading-8 text-secondary/70 font-normal">
+								you can download the application and use on your devices.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- faq -->
+			<div
+				data-section="section-3"
+				class="max-w-7xl mx-auto p-4 my-40"
+				id="faq">
+				<div class="flex flex-col gap-12">
+					<h1 class="text-5xl text-center font-semibold tracking-widest primary-title max-[991px]:text-3xl">
+						Frequently Questions
+					</h1>
+					<div class="accordion-container flex flex-col gap-6 max-w-4xl mx-auto w-full">
+						<div class="accordion w-full flex flex-col border border-solid border-white/20 rounded-lg bg-primary">
+							<button
+								class="accordion-header font-semibold text-secondary/90 flex justify-between items-center w-full p-4 cursor-pointer duration-200">
+								<span>How Can i read the document</span>
+								<ion-icon
+									name="caret-down-outline"
+									class="duration-200"></ion-icon>
+							</button>
+							<div class="accordion-body text-base overflow-hidden duration-200 text-secondary/80 h-0">
+								<p class="p-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, magni.</p>
+							</div>
+						</div>
+						<!--  -->
+						<div class="accordion w-full flex flex-col border border-solid border-white/20 rounded-lg bg-primary">
+							<button
+								class="accordion-header font-semibold text-secondary/90 flex justify-between items-center w-full p-4 cursor-pointer duration-200">
+								<span>How Can i read the document</span>
+								<ion-icon
+									name="caret-down-outline"
+									class="duration-200"></ion-icon>
+							</button>
+							<div class="accordion-body text-base overflow-hidden duration-200 text-secondary/80 h-0">
+								<p class="p-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, magni.</p>
+							</div>
+						</div>
+						<!--  -->
+						<div class="accordion w-full flex flex-col border border-solid border-white/20 rounded-lg bg-primary">
+							<button
+								class="accordion-header font-semibold text-secondary/90 flex justify-between items-center w-full p-4 cursor-pointer duration-200">
+								<span>How Can i read the document</span>
+								<ion-icon
+									name="caret-down-outline"
+									class="duration-200"></ion-icon>
+							</button>
+							<div class="accordion-body text-base overflow-hidden duration-200 text-secondary/80 h-0">
+								<p class="p-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, magni.</p>
+							</div>
+						</div>
+						<!--  -->
+						<div class="accordion w-full flex flex-col border border-solid border-white/20 rounded-lg bg-primary">
+							<button
+								class="accordion-header font-semibold text-secondary/90 flex justify-between items-center w-full p-4 cursor-pointer duration-200">
+								<span>How Can i read the document</span>
+								<ion-icon
+									name="caret-down-outline"
+									class="duration-200"></ion-icon>
+							</button>
+							<div class="accordion-body text-base overflow-hidden duration-200 text-secondary/80 h-0">
+								<p class="p-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, magni.</p>
+							</div>
+						</div>
+						<!--  -->
+					</div>
+				</div>
+			</div>
+			<!-- contact us -->
+			<div
+				data-section="section-4"
+				class="max-w-7xl mx-auto p-4 my-40"
+				id="contact">
+				<div class="grid grid-cols-12 gap-12 max-[991px]:flex max-[991px]:flex-col">
+					<div class="col-span-7">
+						<h1 class="mb-8 text-2xl font-semibold max-[480px]:text-center min-[991px]:hidden">
+							Please fill out the form
+						</h1>
+						<form
+							action="#"
+							method="post"
+							id="main-form"
+							name="main-form"
+							class="main-form flex flex-col gap-9"
+							autocomplete="off"
+							role="form"
+							onsubmit="return false">
+							<div class="grid grid-cols-2 gap-9 max-[991px]:grid-cols-1">
+								<div class="flex w-full relative">
+									<input
+										required
+										type="text"
+										name="name"
+										id="name"
+										class="w-full p-4 rounded-lg border border-solid h-[62px] border-white/20 bg-primary" />
+									<label
+										for="name"
+										class="label duration-200 absolute left-2 top-2 pointer-events-none select-none text-secondary/40 bg-primary px-4 py-2"
+										>Name</label
+									>
+								</div>
+								<div class="flex w-full relative">
+									<input
+										required
+										type="email"
+										name="email"
+										id="email"
+										class="w-full p-4 rounded-lg border border-solid h-[62px] border-white/20 bg-primary" />
+									<label
+										for="email"
+										class="label duration-200 absolute left-2 top-2 pointer-events-none select-none text-secondary/40 bg-primary px-4 py-2"
+										>Email</label
+									>
+								</div>
+							</div>
+							<div class="flex flex-col gap-9">
+								<div class="flex w-full relative col-span-2 max-[991px]:col-span-1">
+									<textarea
+										required
+										name="msg"
+										id="msg"
+										class="w-full p-4 rounded-lg border border-solid border-white/20 bg-primary resize-none"
+										rows="3"></textarea>
+									<label
+										for="msg"
+										class="label duration-200 absolute left-2 top-2 pointer-events-none select-none text-secondary/40 bg-primary px-4 py-2"
+										>Message</label
+									>
+								</div>
+								<div class="grid grid-cols-1 gap-9 max-[991px]:grid-cols-2 max-[580px]:grid-cols-1">
+									<div class="flex w-full relative">
+										<input
+											required
+											type="tel"
+											name="phone"
+											id="phone"
+											class="w-full p-4 rounded-lg border border-solid h-[62px] border-white/20 bg-primary" />
+										<label
+											for="phone"
+											class="label duration-200 absolute left-2 top-2 pointer-events-none select-none text-secondary/40 bg-primary px-4 py-2"
+											>Phone</label
+										>
+									</div>
+									<div class="flex w-full relative">
+										<input
+											required
+											type="file"
+											name="file"
+											id="file"
+											class="w-full p-2 rounded-lg border border-solid border-white/20 bg-primary file:duration-200 file:mr-4 hover:file:opacity-80 file:cursor-pointer file:bg-violet-500 file:py-2 file:px-4 file:rounded-lg" />
+									</div>
+								</div>
+							</div>
+							<button
+								class="primary-btn cursor-pointer w-max ml-auto relative flex justify-center items-center gap-3 p-4 py-2 capitalize rounded-lg text-primary primary-linear duration-200 hover:bg-linear-to-l active:bg-linear-to-l target:bg-linear-to-l focus:bg-linear-to-l">
+								<span>Submit</span>
+								<ion-icon name="flash-outline"></ion-icon>
+								<span
+									class="absolute inset-0 scale-y-110 scale-x-[1.02] rounded-lg bg-conic/decreasing from-violet-700 via-lime-300 to-violet-700 z-[-1]"></span>
+							</button>
+						</form>
+					</div>
+					<!--  -->
+					<div class="col-span-5 max-[991px]:hidden">
+						<h1 class="text-5xl text-center font-semibold tracking-widest primary-title max-[991px]:text-3xl">
+							Contact US
+						</h1>
+						<figure>
+							<img
+								src="./public/contact.svg"
+								alt="contact us"
+								class="w-full" />
+						</figure>
+					</div>
+				</div>
+			</div>
+			<!-- footer -->
+			<footer class="relative overflow-hidden bg-primary/80">
+				<div
+					class="w-50 h-50 absolute left-[20%] top-[50%] bg-gradient-to-b from-violet-500 to-violet-900 rounded-full scale-200 blur-3xl z-[-1]"></div>
+				<div
+					class="w-50 h-50 absolute right-[10%] top-[80%] bg-gradient-to-b from-slate-900 to-slate-500 rounded-full blur-3xl z-[-1]"></div>
+
+				<div class="max-w-7xl mx-auto p-4 mt-40">
+					<div
+						class="-translate-y-[50%] pb-4 border-b border-solid border-b-white/10 flex justify-between items-center gap-6 max-[720px]:flex-col">
+						<h2 class="font-semibold text-4xl max-[720px]:text-center max-[720px]:text-3xl">
+							Your Target Has Been Checked
+						</h2>
+						<div class="flex justify-end">
+							<img
+								src="./public/goal.svg"
+								alt=""
+								class="w-50 h-50 drop-shadow-lg drop-shadow-violet-900/50" />
+						</div>
+					</div>
+					<div class="grid grid-cols-4 gap-12 max-[991px]:grid-cols-2 max-[580px]:grid-cols-1">
+						<ul
+							class="flex flex-col gap-6 border-b border-r border-solid border-transparent max-[991px]:border-secondary/20 max-[991px]:p-8">
+							<h3 class="font-semibold text-secondary/90 text-2xl mb-6">Company</h3>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>About us</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>Futures</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>FAQ</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+						</ul>
+						<ul
+							class="flex flex-col gap-6 border-b border-l border-solid border-transparent max-[991px]:border-secondary/20 max-[991px]:p-8">
+							<h3 class="font-semibold text-secondary/90 text-2xl mb-6">Support</h3>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>Help</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>Contact</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>Resume</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+						</ul>
+						<ul
+							class="flex flex-col gap-6 border-b border-r border-solid border-transparent max-[991px]:border-secondary/20 max-[991px]:p-8">
+							<h3 class="font-semibold text-secondary/90 text-2xl mb-6">Contact</h3>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>Legacy</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>Privacy</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+							<li>
+								<a
+									href="#"
+									class="text-secondary/70 flex items-center gap-3 duration-200 hover:text-violet-400 group">
+									<span>Movement</span>
+									<ion-icon
+										name="open-outline"
+										class="block duration-200 group-hover:-translate-y-1"></ion-icon>
+								</a>
+							</li>
+						</ul>
+
+						<form
+							action="#"
+							method="post"
+							role="form"
+							id="sub-form"
+							class="sub-form flex flex-col gap-6 border-b border-l border-solid border-transparent max-[991px]:border-secondary/20 max-[991px]:p-8"
+							name="sub-form">
+							<h3 class="font-semibold text-secondary/90 text-2xl mb-6">News Letter</h3>
+							<div class="form-control flex flex-col gap-6 relative">
+								<input
+									required
+									type="email"
+									id="sub-email"
+									name="sub-email"
+									class="w-full p-4 rounded-lg border border-solid h-[62px] border-white/20 bg-primary" />
+								<label
+									for="sub-email"
+									class="label duration-200 absolute left-2 top-2 pointer-events-none select-none text-secondary/40 bg-primary px-4 py-2"
+									>Email</label
+								>
+							</div>
+							<button
+								type="submit"
+								class="px-4 py-3 rounded-lg w-max ml-auto cursor-pointer bg-violet-500">
+								Submit
+							</button>
+						</form>
+					</div>
+					<div class="flex justify-center items-center w-full mt-20">
+						<button
+							id="scrollTop"
+							class="flex justify-center items-center p-4 cursor-pointer duration-200 text-secondary/60 font-extralight hover:text-secondary">
+							<span>Scroll Top</span>
+						</button>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script
+			type="module"
+			src="src/app.js"></script>
+	</body>
+</html>

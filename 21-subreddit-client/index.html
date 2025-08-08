@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/vite.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Subreddit Client</title>
+
+		<link
+			rel="stylesheet"
+			href="/src/style.css" />
+	</head>
+	<body>
+		<!--  -->
+		<div id="app">
+			<!-- start here -->
+			<div class="header-wrapper">
+				<header class="header container">
+					<h1 class="brand">MultiLane <ion-icon name="logo-reddit"></ion-icon> Client</h1>
+					<nav class="header-nav">
+						<!--  -->
+						<div class="toggle-theme-container">
+							<button
+								title="open theme options"
+								aria-label="view theme options"
+								id="open-dropdown"
+								class="btn btn-soft">
+								<ion-icon
+									name="sunny-outline"
+									class="active"></ion-icon>
+								<ion-icon name="moon-outline"></ion-icon>
+								<ion-icon name="tv-outline"></ion-icon>
+							</button>
+							<!--  -->
+							<ul
+								class="theme-options shadow-main"
+								role="tablist"
+								hidden>
+								<div
+									class="tracker"
+									aria-hidden="true"></div>
+								<li role="tab">
+									<button
+										role="button"
+										aria-label="light theme"
+										data-theme="sunny"
+										class="theme-opt">
+										<ion-icon name="sunny-outline"></ion-icon>
+									</button>
+								</li>
+								<li role="tab">
+									<button
+										role="button"
+										aria-label="dark theme"
+										data-theme="moon"
+										class="theme-opt">
+										<ion-icon name="moon-outline"></ion-icon>
+									</button>
+								</li>
+								<li role="tab">
+									<button
+										role="button"
+										aria-label="system theme"
+										data-theme="tv"
+										class="theme-opt">
+										<ion-icon name="tv-outline"></ion-icon>
+									</button>
+								</li>
+							</ul>
+						</div>
+						<!--  -->
+						<div class="open-modal-btn-holder">
+							<button
+								aria-label="open modal"
+								title="open modal"
+								tabindex="0"
+								id="open-modal"
+								class="btn btn-soft">
+								<ion-icon name="add-outline"></ion-icon>
+							</button>
+						</div>
+					</nav>
+				</header>
+			</div>
+			<!--  -->
+			<nav
+				class="scroll-nav"
+				hidden
+				role="navigation">
+				<li role="tab">
+					<button
+						role="button"
+						aria-label="scroll to right"
+						title="scroll to right"
+						class="btn btn-nav"
+						id="scroll-to--right">
+						<ion-icon name="chevron-forward-outline"></ion-icon>
+					</button>
+				</li>
+				<li role="tab">
+					<button
+						role="button"
+						aria-label="scroll to left"
+						title="scroll to left"
+						class="btn btn-nav disabled"
+						id="scroll-to--left">
+						<ion-icon name="chevron-back-outline"></ion-icon>
+					</button>
+				</li>
+			</nav>
+			<!--  -->
+			<main class="main">
+				<div
+					class="empty-box container"
+					aria-hidden="true">
+					<img
+						src="/images/empty.webp"
+						alt="empty box"
+						class="empty-img" />
+				</div>
+			</main>
+			<!--  -->
+			<div
+				role="dialog"
+				class="modal"
+				hidden>
+				<div class="modal-inner shadow-main">
+					<header class="modal-header">
+						<h4 class="modal-title">Enter Subreddit name</h4>
+						<button
+							class="btn btn-danger"
+							id="close-modal">
+							<ion-icon name="close-outline"></ion-icon>
+						</button>
+					</header>
+					<div class="input-holder">
+						<input
+							type="text"
+							id="subreddit-input"
+							placeholder="e.g WebDev"
+							class="input shadow-main" />
+					</div>
+					<div class="add-new-subreddit-btn-holder">
+						<button
+							aria-label="add new subreddit"
+							title="add new subreddit"
+							tabindex="0"
+							class="btn btn-ghost disabled"
+							id="addnew-subreddit">
+							add new
+						</button>
+					</div>
+				</div>
+			</div>
+			<!--  -->
+		</div>
+		<!--  -->
+		<!-- ion icons -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<!-- scripts -->
+		<script
+			type="module"
+			src="/src/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import "./css/toastify.css";
+@import "tailwindcss";
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 1rem;
+}
+
+@theme {
+	--font-poppins: "Poppins", sans-serif;
+	--ease-custom: cubic-bezier(0.33, 1, 0.68, 1);
+	--z-select: 10;
+	--color-primary: #748ffc;
+	--color-white: #fff;
+	--color-black: #121212;
+}
+
+input[type="number"] {
+	&::-webkit-inner-spin-button {
+		appearance: none;
+	}
+}
+
+@layer base {
+	body {
+		@apply py-10 grid font-poppins leading-8 text-base overflow-x-hidden min-h-screen place-content-center bg-slate-50 text-black;
+	}
+
+	input {
+		@apply outline-none;
+	}
+}
+
+.wrapper {
+	@apply grid gap-2 grid-cols-1 md:grid-cols-2 items-center border-5 border-solid border-primary rounded-lg max-w-2xl mx-auto shadow-[0_12px_20px_red] shadow-black/15 bg-white;
+}
+
+.wrapper-left {
+	@apply p-4 md:px-8 md:py-12;
+}
+
+.title {
+	@apply font-semibold text-xl md:text-2xl mb-10;
+}
+
+.inputs-wrapper {
+	@apply flex mb-5;
+}
+
+.input-holder {
+	@apply flex items-end gap-1;
+}
+
+.label {
+	@apply flex flex-col gap-2 w-full;
+
+	span {
+		@apply select-none text-primary tracking-wide text-lg mb-1;
+	}
+}
+
+.input {
+	@apply rounded-lg border border-solid border-black/10 w-full p-2 focus-visible:outline-3 focus-visible:outline-solid focus-visible:outline-primary/40;
+}
+
+.select {
+	@apply relative;
+}
+
+.select-btn {
+	@apply w-full flex justify-between items-center border border-solid border-black/10 rounded-lg p-2 cursor-pointer text-black/70 focus:outline-3 focus:outline-solid focus:outline-primary/40;
+}
+
+.icon {
+	@apply fill-transparent text-sm;
+
+	svg {
+		@apply size-6 stroke-primary;
+	}
+}
+
+#temp .select-btn {
+	@apply w-[60px];
+}
+
+.options {
+	@apply w-full rounded-lg top-[120%] absolute border border-solid border-black/10 overflow-hidden shadow-[0_12px_20px_red] shadow-black/15;
+	z-index: var(--z-select);
+}
+
+.opt button {
+	@apply flex justify-start items-center w-full cursor-pointer bg-slate-50 px-3 py-2 duration-200 ease-custom hover:bg-neutral-200;
+}
+
+.btn-holder {
+	@apply mt-10;
+}
+
+.wrapper-result {
+	@apply order-[-1] md:order-1 flex justify-center items-center bg-primary h-full py-10 text-6xl font-semibold text-white;
+
+	p {
+		@apply relative break-words max-w-[240px];
+	}
+}
+
+#unit {
+	@apply absolute top-[-1rem] left-full text-lg;
+}
+
+.btn-primary {
+	@apply bg-linear-to-r from-primary to-blue-500 text-white w-full py-3 rounded-lg shadow-[0_12px_20px_red] shadow-black/15 text-xl cursor-pointer duration-200 ease-custom hover:scale-95;
+}
+
+.scale-in {
+	animation: scale-in 200ms var(--ease-custom) forwards;
+}
+
+@keyframes scale-in {
+	from {
+		scale: 0.9;
+		opacity: 0;
+		translate: 0 -20px;
+	}
+	to {
+		scale: 1;
+		opacity: 1;
+		translate: 0 0;
+	}
+}
+
+.scale-out {
+	animation: scale-out 200ms var(--ease-custom) forwards;
+}
+
+@keyframes scale-out {
+	from {
+		scale: 1;
+		opacity: 1;
+		translate: 0 0;
+	}
+
+	to {
+		scale: 0.9;
+		opacity: 0;
+		translate: 0 -20px;
+	}
+}
+
+/* toastify styles */
+.toastify {
+	@apply rounded-lg;
+}

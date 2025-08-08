@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>testimonials cards</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="flex flex-col gap-3">
+				<div class="flex-cr flex justify-between gap-1 w-full">
+					<div class="flex flex-col gap-1">
+						<div class="flex flex-col gap-1 black-bg rounded arrow">
+							<p class="para">
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae nisi sed, totam culpa dolor veniam
+								laborum accusantium ducimus quia itaque.
+							</p>
+							<p>Highly recommened!</p>
+						</div>
+						<div class="flex align-center gap-1">
+							<div>
+								<img
+									src="public/girl.jpg"
+									alt="Artem Jones"
+									class="img-full-rounded" />
+							</div>
+							<div class="flex flex-col gap-.2rem">
+								<h2>Artem Jones</h2>
+								<p>Juniro Frontend Developer</p>
+							</div>
+						</div>
+					</div>
+					<div class="flex flex-col gap-1 card black-border rounded">
+						<div>
+							<p class="para">
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae nisi sed, totam culpa dolor veniam
+								laborum accusantium ducimus quia itaque.
+							</p>
+						</div>
+						<div class="flex align-center gap-1">
+							<div>
+								<img
+									src="public/girl.jpg"
+									alt="Artem Jones"
+									class="img-full-rounded" />
+							</div>
+							<div class="flex flex-col gap-.2rem">
+								<h2>Artem Jones</h2>
+								<p>Juniro Frontend Developer</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--  -->
+				<div class="flex-cr flex justify-between gap-1 w-full">
+					<div class="flex flex-col gap-1">
+						<div class="flex align-center gap-1">
+							<div>
+								<img
+									src="public/girl.jpg"
+									alt="Artem Jones"
+									class="rounded"
+									height="235" />
+							</div>
+						</div>
+					</div>
+					<div class="w-full flex flex-col gap-1 card black-bg rounded">
+						<ul class="flex gap-.2rem">
+							<li class="star"><i class="fa-solid fa-star"></i></li>
+							<li class="star"><i class="fa-solid fa-star"></i></li>
+							<li class="star"><i class="fa-solid fa-star"></i></li>
+							<li class="star"><i class="fa-solid fa-star"></i></li>
+							<li class="star"><i class="fa-solid fa-star"></i></li>
+						</ul>
+						<div class="flex flex-col gap-.2rem">
+							<h1>Jackie Mackle</h1>
+							<p class="gray">Engineering Manager</p>
+						</div>
+						<p class="para">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias provident magnam, eos aut sed est nesciunt!
+							Eligendi sed ea facilis.
+						</p>
+					</div>
+				</div>
+				<!--  -->
+				<div class="flex-cr flex justify-between gap-1 w-full">
+					<div class="black-border rounded card flex flex-col gap-3">
+						<p class="flex justify-center align-center para">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque ipsa delectus maiores omnis sequi? Saepe
+							fuga nobis commodi provident nesciunt natus ipsum error autem expedita? Voluptatem, eos architecto! Esse,
+							nihil.
+						</p>
+						<div class="slider-cr flex flex-col gap-1">
+							<div class="slider flex justify-center align-center gap-1">
+								<div class="flex">
+									<img
+										src="public/girl.jpg"
+										alt="John Doe"
+										class="img-full-rounded" />
+								</div>
+								<div class="flex active">
+									<img
+										src="public/girl.jpg"
+										alt="Aretem Jones"
+										class="img-full-rounded" />
+								</div>
+								<div class="flex">
+									<img
+										src="public/girl.jpg"
+										alt="Test"
+										class="img-full-rounded" />
+								</div>
+							</div>
+							<div class="flex justify-center align-center">
+								<p class="person-name">Artem Jones</p>
+							</div>
+							<div class="arrow-container flex justify-between align-center w-full">
+								<button id="back">
+									<i class="fa-solid fa-arrow-left"></i>
+								</button>
+								<button id="forward">
+									<i class="fa-solid fa-arrow-right"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
+	</body>
+</html>

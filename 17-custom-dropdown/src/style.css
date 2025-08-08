@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+.active {
+	svg {
+		@apply rotate-180;
+	}
+}

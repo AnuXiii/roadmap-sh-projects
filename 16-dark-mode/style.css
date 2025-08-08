@@ -1,0 +1,41 @@
+:root {
+	--primary-clr: #121212;
+	--sec-clr: #f9f9f9;
+	--linear-clr-1: #ccc;
+	--linear-clr-2: rgb(35 35 100 / 0.1);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html.dark {
+	--primary-clr: #f9f9f9;
+	--sec-clr: #121212;
+	--linear-clr-1: #353535;
+	--linear-clr-2: rgb(12 12 12 / 0.9);
+}
+
+body {
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+	background-image: linear-gradient(to top, var(--linear-clr-1), var(--linear-clr-2));
+}
+
+#change-theme {
+	padding: 1rem;
+	font-size: 2rem;
+	border-radius: 10px;
+	background: var(--sec-clr);
+	border: 3px solid var(--primary-clr);
+	outline: 3px solid var(--sec-clr);
+	cursor: pointer;
+	transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+	&:hover {
+		outline: 50px solid transparent;
+	}
+}

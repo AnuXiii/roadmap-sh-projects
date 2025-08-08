@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import "tailwindcss";
+@import "./css/animations.css";
+@import "./css/toastify.css";
+
+@utility container {
+	padding-inline: 2rem;
+	margin-inline: auto;
+}
+
+@theme {
+	--color-primary: #a78bfa;
+	--ease-custom: cubic-bezier(0.33, 1, 0.68, 1);
+	--font-poppins: "Poppins", sans-serif;
+}
+
+@layer base {
+	html {
+		@apply scheme-dark scroll-smooth;
+	}
+
+	body {
+		@apply bg-zinc-950 text-white/90 font-poppins text-base overflow-x-hidden;
+	}
+
+	button {
+		@apply cursor-pointer select-none;
+	}
+
+	li {
+		@apply list-none;
+	}
+
+	i {
+		@apply uppercase;
+		font-style: normal;
+	}
+
+	input {
+		@apply outline-none;
+	}
+}
+
+.correct {
+	@apply border-green-500;
+
+	.option-letter {
+		@apply bg-green-500 text-white;
+	}
+}
+
+.incorrect {
+	@apply border-rose-500;
+
+	.option-letter {
+		@apply bg-rose-500 text-white;
+	}
+}

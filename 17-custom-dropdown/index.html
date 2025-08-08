@@ -1,0 +1,317 @@
+<!doctype html>
+<html
+	lang="en"
+	class="scheme-dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>custom dropdwon</title>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+		<link
+			rel="stylesheet"
+			href="src/output.css" />
+	</head>
+	<body class="font-sans">
+		<div id="app">
+			<div class="max-w-5xl p-4 mx-auto">
+				<form
+					action="#"
+					method="get"
+					class="flex flex-col gap-6">
+					<nav class="navbar flex justify-between gap-6 max-[480px]:flex-col">
+						<ul class="navbar-list w-full flex flex-col gap-6">
+							<label class="block font-bold text-2xl">Countries</label>
+							<div class="relative">
+								<button
+									type="button"
+									class="select-box-button w-full p-4 bg-neutral-900 border border-solid border-white/20 rounded-lg shadow-lg shadow-black/50 cursor-pointer flex justify-between items-center gap-6 duration-200 focus:shadow-transparent focus:opacity-80">
+									<span>Select an Item</span>
+									<svg
+										class="duration-200"
+										width="20"
+										height="20"
+										viewBox="0 0 15 15"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M7.5 2C7.77614 2 8 2.22386 8 2.5L8 11.2929L11.1464 8.14645C11.3417 7.95118 11.6583 7.95118 11.8536 8.14645C12.0488 8.34171 12.0488 8.65829 11.8536 8.85355L7.85355 12.8536C7.75979 12.9473 7.63261 13 7.5 13C7.36739 13 7.24021 12.9473 7.14645 12.8536L3.14645 8.85355C2.95118 8.65829 2.95118 8.34171 3.14645 8.14645C3.34171 7.95118 3.65829 7.95118 3.85355 8.14645L7 11.2929L7 2.5C7 2.22386 7.22386 2 7.5 2Z"
+											fill="currentColor"
+											fill-rule="evenodd"
+											clip-rule="evenodd"></path>
+									</svg>
+								</button>
+								<div
+									class="select-box-items max-h-0 absolute top-[150%] w-full rounded-lg overflow-hidden divide-y divide-solid divide-white/10 shadow-lg shadow-black/50 duration-200 z-10">
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="iran">
+											<span>iran</span>
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="usa">
+											<span>usa</span>
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="canada">
+											<span>canada</span>
+
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="saudi">
+											<span>saudi-arabia</span>
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="nerway">
+											<span>nerway</span>
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<input
+										type="text"
+										id="country-value-1"
+										name="country-value-1"
+										hidden />
+								</div>
+							</div>
+						</ul>
+						<ul class="navbar-list w-full flex flex-col gap-6">
+							<label class="block font-bold text-2xl">Countries</label>
+							<div class="relative">
+								<button
+									type="button"
+									class="select-box-button w-full p-4 bg-neutral-900 border border-solid border-white/20 rounded-lg shadow-lg shadow-black/50 cursor-pointer flex justify-between items-center gap-6 duration-200 focus:shadow-transparent focus:opacity-80">
+									<span>Select an Item</span>
+									<svg
+										class="duration-200"
+										width="20"
+										height="20"
+										viewBox="0 0 15 15"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M7.5 2C7.77614 2 8 2.22386 8 2.5L8 11.2929L11.1464 8.14645C11.3417 7.95118 11.6583 7.95118 11.8536 8.14645C12.0488 8.34171 12.0488 8.65829 11.8536 8.85355L7.85355 12.8536C7.75979 12.9473 7.63261 13 7.5 13C7.36739 13 7.24021 12.9473 7.14645 12.8536L3.14645 8.85355C2.95118 8.65829 2.95118 8.34171 3.14645 8.14645C3.34171 7.95118 3.65829 7.95118 3.85355 8.14645L7 11.2929L7 2.5C7 2.22386 7.22386 2 7.5 2Z"
+											fill="currentColor"
+											fill-rule="evenodd"
+											clip-rule="evenodd"></path>
+									</svg>
+								</button>
+								<div
+									class="select-box-items max-h-0 absolute top-[150%] w-full rounded-lg overflow-hidden divide-y divide-solid divide-white/10 shadow-lg shadow-black/50 duration-200 z-10">
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="iran">
+											<span>iran</span>
+											<svg
+												class="opacity-0 duration-100"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="usa">
+											<span>usa</span>
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="canada">
+											<span>canada</span>
+
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="saudi">
+											<span>saudi-arabia</span>
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<li>
+										<button
+											type="button"
+											class="flex justify-between items-center p-4 cursor-pointer bg-neutral-900 w-full text-white/70 duration-200 capitalize hover:text-white"
+											data-value="nerway">
+											<span>nerway</span>
+											<svg
+												class="opacity-0"
+												width="20"
+												height="20"
+												viewBox="0 0 15 15"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+													fill="currentColor"
+													fill-rule="evenodd"
+													clip-rule="evenodd"></path>
+											</svg>
+										</button>
+									</li>
+									<input
+										type="text"
+										id="country-value-2"
+										name="country-value-2"
+										hidden />
+								</div>
+							</div>
+						</ul>
+					</nav>
+					<button
+						type="submit"
+						class="w-32 duration-200 cursor-pointer p-4 rounded-lg shadow-lg shadow-black/50 bg-violet-900 border border-solid border-violet-100/50 hover:shadow-transparent hover:opacity-80">
+						Send
+					</button>
+				</form>
+			</div>
+		</div>
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+		<script
+			type="module"
+			src="src/main.js"></script>
+	</body>
+</html>

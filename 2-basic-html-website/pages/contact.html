@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Contact us</title>
+		<link
+			rel="stylesheet"
+			href="../style.css" />
+	</head>
+	<body>
+		<div class="container contact-us">
+			<h1>Contact us With the form</h1>
+			<form action="/">
+				<div class="form-cr">
+					<div class="form-control">
+						<input
+							type="text"
+							name="name"
+							required
+							id="name" />
+						<label for="name">Name</label>
+					</div>
+					<div class="form-control">
+						<input
+							type="email"
+							name="email"
+							required
+							id="email" />
+						<label for="email">Email</label>
+					</div>
+				</div>
+				<div class="form-cr">
+					<div class="form-control">
+						<input
+							type="tel"
+							name="number"
+							required
+							id="number" />
+						<label for="number">Number</label>
+					</div>
+					<div class="form-control">
+						<textarea
+							name="msg"
+							id="msg"
+							rows="5"
+							required></textarea>
+						<label for="msg">Message</label>
+					</div>
+				</div>
+				<button type="submit">Submit form</button>
+			</form>
+		</div>
+
+		<script src="../app.js"></script>
+	</body>
+</html>

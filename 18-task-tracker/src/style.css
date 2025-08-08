@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+	--color-primary: #121212;
+	--color-secondary: #f9f9f9;
+	--font-pop: "Poppins", sans-serif;
+}
+
+body {
+	background: var(--color-primary);
+	color: var(--color-secondary);
+	overflow-x: hidden;
+	font-family: "Poppins" sans-serif;
+}
+
+@layer base {
+	html {
+		scroll-padding-top: 10rem;
+		scroll-behavior: smooth;
+	}
+}
+
+@layer components {
+	.cyberpunk {
+		@apply w-16 h-16 duration-200;
+		clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0 100%, 0 0);
+	}
+
+	.primary-title {
+		@apply text-shadow-violet-900 text-shadow-[10px_0_0];
+	}
+
+	.task {
+		@apply flex items-center gap-6 bg-primary px-4 border border-solid border-white/5 rounded-lg shadow-lg shadow-primary h-fit;
+	}
+}
+
+@layer utilities {
+	.primary-linear {
+		@apply bg-linear-to-r from-violet-500 to-violet-100;
+	}
+}
+
+[data-checked="true"] {
+	@apply border-green-600/30;
+}
+
+.checkbox-btn.active {
+	span:not(.date) {
+		@apply bg-green-600 border-white;
+
+		ion-icon {
+			@apply opacity-100 scale-110;
+		}
+	}
+
+	p {
+		@apply line-through text-secondary/40;
+	}
+}
+
+.scale-in {
+	animation: scale-in 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes scale-in {
+	from {
+		scale: 0;
+	}
+	to {
+		scale: 1;
+	}
+}
+
+.fade-out {
+	animation: fade-out 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+.link.active {
+	@apply text-violet-500;
+}
+
+.nav-container {
+	@apply duration-200 border-b border-transparent;
+
+	&.active {
+		@apply bg-primary/80 backdrop-blur-sm border-b-secondary/30;
+	}
+}
+
+.logo:hover {
+	.cyberpunk {
+		clip-path: polygon(20% 0%, 100% 0, 100% 20%, 100% 80%, 100% 100%, 20% 100%, 0 100%, 0 0);
+	}
+}
+
+@media (max-width: 991px) {
+	.nav-items {
+		@apply p-4 py-10 fixed z-10 flex-col gap-12 items-start w-full h-screen left-0 top-0 bg-primary/90 backdrop-blur-sm translate-x-full opacity-0 duration-400;
+
+		&.active {
+			opacity: 1;
+			translate: 0 0;
+		}
+	}
+
+	.line {
+		display: none;
+	}
+}
+
+.primary-btn:hover .absolute {
+	animation: bg-move 1s linear infinite;
+}
+
+@keyframes bg-move {
+	to {
+		background-position-x: 100px;
+	}
+}
+
+.box:hover {
+	background-attachment: fixed;
+	background-image: radial-gradient(
+		circle at var(--x, 0) var(--y, 0),
+		rgb(255 255 255 / 0.1),
+		rgb(255 255 255 / 0.01) 10rem
+	);
+}
+
+.accordion-header {
+	&.active {
+		@apply text-secondary/50;
+	}
+
+	&.active ion-icon {
+		@apply rotate-180;
+	}
+}
+
+.main-form,
+.form-control {
+	.label {
+		@apply flex;
+	}
+
+	.label span {
+		@apply inline-block;
+	}
+
+	input:focus ~ .label,
+	input:valid ~ .label,
+	textarea:focus ~ .label,
+	textarea:valid ~ .label {
+		background: transparent;
+	}
+
+	input:focus ~ .label span,
+	input:valid ~ .label span,
+	textarea:focus ~ .label span,
+	textarea:valid ~ .label span {
+		background: var(--color-primary);
+		padding: 0 0.2rem;
+		transform: translateY(-30px);
+	}
+}
+
+.alert {
+	@apply rounded-lg;
+}
+
+.blur-overlay.hide {
+	opacity: 0;
+}

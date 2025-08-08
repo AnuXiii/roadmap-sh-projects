@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import "tailwindcss";
+@import "tailwindcss-animated";
+@import "./css/animations.css";
+
+@theme {
+	--color-primary: #f02e65;
+	--color-secondary: #1a73e8;
+	--color-black: #0c0c0d;
+	--color-dark-gray: #171717;
+	--color-light-gray: #e3e3e3;
+	--color-white: #ffffff;
+
+	--font-poppins: "Poppins", sans-serif;
+
+	--ease-smooth: cubic-bezier(0.25, 1, 0.5, 1); /* Smooth and modern animation */
+	--ease-soft: cubic-bezier(0.4, 0, 0.2, 1); /* Similar to Material Design */
+	--ease-snappy: cubic-bezier(0.3, 1.2, 0.7, 1); /* Spring-like or snappy effect */
+	--ease-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy and attractive */
+	--ease-decelerate: cubic-bezier(0, 0, 0.2, 1); /* Decelerates at the end */
+}
+
+@utility container {
+	margin-inline: auto;
+}
+
+@layer base {
+	html {
+		@apply scroll-smooth;
+	}
+
+	body {
+		@apply text-white bg-black overflow-x-hidden min-h-screen text-base font-poppins;
+	}
+
+	button {
+		@apply cursor-pointer;
+	}
+
+	button,
+	input {
+		@apply outline-none border-none;
+	}
+
+	i {
+		@apply not-italic;
+	}
+
+	li {
+		@apply list-none;
+	}
+
+	img {
+		@apply w-full h-full;
+	}
+}
+
+#app {
+	@apply min-h-screen;
+}
+
+[data-is-viewed="false"] {
+	@apply from-purple-500 via-red-600 to-yellow-600;
+}
+
+[data-is-viewed="true"] {
+	@apply bg-black border-2 border-solid border-light-gray/40;
+}
+
+[data-story-wrapper-inner]::-webkit-scrollbar {
+	@apply h-1 bg-neutral-700 rounded-full;
+}
+
+[data-story-wrapper-inner]::-webkit-scrollbar-thumb {
+	@apply h-1 bg-light-gray rounded-full;
+}

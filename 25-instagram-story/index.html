@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<link
+			rel="stylesheet"
+			href="/src/style.css" />
+		<meta charset="UTF-8" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/vite.svg" />
+		<meta
+			name="viewport"
+			content="width=device-width, user-scalable=no" />
+		<title>Instagram story</title>
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<!-- --------------------------------------------- -->
+		<div id="app">
+			<!-- --------------------------------------------- -->
+			<div class="container overflow-hidden">
+				<!-- --------------------------------------------- -->
+				<div
+					data-story-wrapper-outer
+					class="bg-dark-gray border-r border-l border-solid border-light-gray/20 min-h-screen py-4 px-6 relative">
+					<!-- --------------------------------------------- -->
+					<button
+						data-nav-left
+						class="absolute left-5 top-16 -translate-y-1/2 p-0.5 rounded-full bg-white border border-solid border-light-gray/30 hover:opacity-90 z-99 focus-visible:border-secondary"
+						hidden>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="black"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-chevron-left-icon lucide-chevron-left">
+							<path d="m15 18-6-6 6-6" />
+						</svg>
+					</button>
+					<!-- --------------------------------------------- -->
+					<button
+						data-nav-right
+						class="absolute right-5 top-16 -translate-y-1/2 p-0.5 rounded-full bg-white border border-solid border-light-gray/30 hover:opacity-90 z-99 focus-visible:border-secondary"
+						hidden>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="black"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-chevron-right-icon lucide-chevron-right">
+							<path d="m9 18 6-6-6-6" />
+						</svg>
+					</button>
+					<!-- --------------------------------------------- -->
+					<div
+						data-story-wrapper-inner
+						class="flex gap-6 overflow-x-auto py-4 relative scroll-smooth">
+						<li class="flex flex-col justify-center items-center gap-2 text-center">
+							<label
+								accesskey="a"
+								aria-label="add new story"
+								title="add story"
+								role="button"
+								tabindex="0"
+								for="add-story"
+								class="cursor-pointer flex justify-center items-center size-16 rounded-full border-2 border-solid border-secondary outline-1 outline-solid outline-transparent hover:opacity-90 focus-visible:outline-secondary">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="32"
+									height="32"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="lucide lucide-plus-icon lucide-plus">
+									<path d="M5 12h14" />
+									<path d="M12 5v14" />
+								</svg>
+								<input
+									data-add-story-input
+									type="file"
+									name="add-story"
+									id="add-story"
+									accept="image/*"
+									hidden />
+							</label>
+							<span class="text-white/80 text-xs select-none">Add story</span>
+						</li>
+						<!-- --------------------------------------------- -->
+						<ul
+							data-stories-row
+							class="flex gap-6 select-none"></ul>
+						<!-- --------------------------------------------- -->
+					</div>
+				</div>
+				<!-- --------------------------------------------- -->
+				<div
+					data-story-modal
+					class="fixed inset-0 bg-dark-gray flex flex-col justify-center items-center cursor-grab active:cursor-grabbing"
+					hidden>
+					<!-- --------------------------------------------- -->
+					<button
+						data-story-modal-close
+						aria-label="close modal"
+						title="close"
+						class="absolute top-10 right-5 md:right-10 z-101 outline-2 outline-solid outline-transparent focus-visible:outline-secondary">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="32"
+							height="32"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-x-icon lucide-x">
+							<path d="M18 6 6 18" />
+							<path d="m6 6 12 12" />
+						</svg>
+					</button>
+					<!-- --------------------------------------------- -->
+					<div
+						data-story-modal-content
+						class="md:m-10 relative max-w-md h-full flex flex-col justify-center bg-black rounded-xl">
+						<div
+							data-story-bars
+							class="flex gap-1 absolute top-4 px-4 w-full"></div>
+						<!-- --------------------------------------------- -->
+						<header class="absolute top-12 px-4 flex items-center gap-3 select-none">
+							<p class="font-semibold text-white/90">AnuXiii</p>
+							<!-- make it dynamic later -->
+							<span
+								data-story-time
+								class="text-white/80 text-xs"
+								>12:24 PM</span
+							>
+						</header>
+						<!-- --------------------------------------------- -->
+						<figure class="w-full h-full select-none pointer-events-none">
+							<img
+								data-story-img
+								src=""
+								alt="story"
+								loading="lazy"
+								class="w-full h-full object-contain" />
+						</figure>
+					</div>
+					<!-- --------------------------------------------- -->
+					<button
+						data-nav-left-modal
+						class="absolute left-2 lg:left-1/4 top-1/2 -translate-y-1/2 p-0.5 rounded-full bg-white border border-solid border-light-gray/30 focus-visible:border-secondary"
+						hidden>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="black"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-chevron-left-icon lucide-chevron-left">
+							<path d="m15 18-6-6 6-6" />
+						</svg>
+					</button>
+					<!-- --------------------------------------------- -->
+					<button
+						data-nav-right-modal
+						class="absolute right-2 lg:right-1/4 top-1/2 -translate-y-1/2 p-0.5 rounded-full bg-white border border-solid border-light-gray/30 focus-visible:border-secondary"
+						hidden>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="black"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-chevron-right-icon lucide-chevron-right">
+							<path d="m9 18 6-6-6-6" />
+						</svg>
+					</button>
+					<!-- --------------------------------------------- -->
+				</div>
+			</div>
+		</div>
+		<script
+			type="module"
+			src="/src/Main.js"></script>
+	</body>
+</html>

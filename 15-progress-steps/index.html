@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>progress steps</title>
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="container-inner">
+				<div class="progress-bar">
+					<div
+						class="progress-inner"
+						style="width: 0"></div>
+					<ul class="steps">
+						<li class="step active">1</li>
+						<li class="step">2</li>
+						<li class="step">3</li>
+						<li class="step">4</li>
+					</ul>
+				</div>
+				<div class="action-buttons">
+					<button
+						id="prev"
+						aria-label="prev step"
+						disabled
+						tabindex="0"
+						title="prev step">
+						Prev
+					</button>
+					<button
+						id="next"
+						aria-label="next step"
+						tabindex="0"
+						title="next step">
+						Next
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>

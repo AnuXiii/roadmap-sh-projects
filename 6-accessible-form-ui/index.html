@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Accesisble form ui</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link
+			rel="stylesheet"
+			href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="container-inner">
+				<!--  -->
+				<form
+					class="form-box flex flex-col"
+					action="/"
+					method="post">
+					<div class="box">
+						<div class="form-control flex flex-col">
+							<label
+								for="name"
+								aria-label="full name"
+								>full name</label
+							>
+							<input
+								type="text"
+								name="name"
+								id="name"
+								tabindex="0"
+								required
+								minlength="4"
+								autocomplete="name"
+								aria-autocomplete="both"
+								aria-required="true"
+								placeholder="What should we call you?" />
+						</div>
+					</div>
+					<div class="box">
+						<div class="form-control flex flex-col">
+							<label
+								for="email"
+								aria-label="email"
+								>email</label
+							>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								tabindex="0"
+								required
+								autocomplete="email"
+								aria-autocomplete="both"
+								aria-required="true"
+								placeholder="john@doe.com" />
+						</div>
+					</div>
+					<div class="box">
+						<div class="form-control flex flex-col">
+							<label
+								for="password"
+								aria-label="password"
+								>enter password</label
+							>
+							<input
+								type="password"
+								name="password"
+								id="password"
+								tabindex="0"
+								required
+								minlength="8"
+								autocomplete="off"
+								aria-autocomplete="none"
+								aria-required="true"
+								placeholder="xxxxxxxx" />
+
+							<input
+								type="checkbox"
+								name="view-pass"
+								id="view-pass"
+								checked
+								hidden
+								aria-hidden="true" />
+							<label
+								for="view-pass"
+								class="view-password flex"
+								aria-label="toggle password visibility">
+								<i class="fa-solid fa-eye"></i>
+								<i class="fa-solid fa-eye-slash"></i>
+							</label>
+						</div>
+					</div>
+					<div class="box">
+						<div class="form-control flex flex-col">
+							<label
+								for="rpt-password"
+								aria-label="rpt-password"
+								>confirm password</label
+							>
+							<input
+								type="password"
+								name="rpt-password"
+								id="rpt-password"
+								tabindex="0"
+								required
+								minlength="8"
+								autocomplete="off"
+								aria-autocomplete="none"
+								aria-required="true"
+								placeholder="xxxxxxxx" />
+							<input
+								type="checkbox"
+								name="view-rpt-pass"
+								id="view-rpt-pass"
+								checked
+								hidden
+								aria-hidden="true" />
+							<label
+								for="view-rpt-pass"
+								class="view-password flex"
+								aria-label="toggle password visibility">
+								<i class="fa-solid fa-eye"></i>
+								<i class="fa-solid fa-eye-slash"></i>
+							</label>
+						</div>
+					</div>
+					<div class="box">
+						<button
+							type="submit"
+							class="btn"
+							tabindex="0"
+							aria-label="update profile"
+							title="submit">
+							Update Profile
+						</button>
+					</div>
+				</form>
+				<!--  -->
+				<div class="form-info flex flex-col">
+					<div class="circle-cr flex">
+						<div class="circle-inner"></div>
+						<p class="percent">65%</p>
+					</div>
+					<h1>Profile Completeness</h1>
+					<div class="form-info-box">
+						<ul class="flex flex-col">
+							<li class="checked">Create Account</li>
+							<li class="checked">Update Roadmap Progress</li>
+							<li class="checked">Setup Public Profile</li>
+							<li>Complete your first project</li>
+							<li>Invite your Friends</li>
+						</ul>
+					</div>
+				</div>
+				<!--  -->
+			</div>
+		</div>
+	</body>
+</html>

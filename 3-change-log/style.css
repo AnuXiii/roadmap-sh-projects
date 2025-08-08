@@ -1,0 +1,147 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font: normal normal 16px system-ui;
+	color: #121212;
+	display: flex;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+ul {
+	list-style: none;
+}
+
+header {
+	margin-bottom: 3rem;
+	text-align: center;
+
+	h1 {
+		margin-bottom: 0.5rem;
+		font-size: 3rem;
+		font-weight: 600;
+	}
+
+	p {
+		color: rgb(12 12 12 / 0.5);
+	}
+}
+
+.container {
+	max-width: 1320px;
+	padding: 2rem;
+	margin: 2rem auto;
+
+	@media (max-width: 720px) {
+		padding: 1rem;
+	}
+}
+
+.contaienr-inner {
+	border: 2px dashed #121212;
+	border-radius: 10px;
+	box-shadow: 0 4px 14px rgb(12 12 12 / 0.1);
+	padding: 2rem;
+
+	@media (max-width: 720px) {
+		border: none;
+		border-radius: none;
+		box-shadow: none;
+		padding: 0;
+	}
+}
+
+.timeline {
+	position: relative;
+	margin: 1.5rem auto;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+
+	@media (max-width: 450px) {
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 2px;
+		background: #121212;
+		top: 0;
+		bottom: 0;
+		left: calc(30% - 1px);
+	}
+}
+
+.timeline-item {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 3rem;
+	width: 100%;
+	position: relative;
+
+	@media (max-width: 450px) {
+		flex-direction: column;
+		gap: 1rem;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid rgb(12 12 12 / 0.1);
+
+		&::after {
+			display: none;
+		}
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		left: 30%;
+		top: 5px;
+		transform: translateX(-50%);
+		border-radius: 100vw;
+		background: #121212;
+		transition: 0.2s ease-in-out;
+	}
+}
+
+.timeline-date {
+	color: rgb(12 12 12 / 0.5);
+}
+
+.timeline-content {
+	font-weight: 600;
+	text-align: right;
+
+	@media (max-width: 450px) {
+		text-align: center;
+	}
+}
+
+.button {
+	background: rgb(81, 16, 202);
+	text-decoration: none;
+	padding: 1rem;
+	font-size: 1.1rem;
+	border-radius: 6px;
+	color: #f9f9f9;
+	font-weight: bold;
+	margin: 0 auto;
+	display: block;
+	margin-top: 3rem;
+	width: max-content;
+}

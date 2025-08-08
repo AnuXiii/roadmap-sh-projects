@@ -1,0 +1,208 @@
+:root {
+	--primary-clr: #121212;
+	--gray-900: rgb(12 12 12 / 0.1);
+	--red: rgb(230, 60, 60);
+	--green: rgb(30, 250, 63);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: system-ui, sans-serif;
+}
+
+ul {
+	list-style: none;
+}
+
+label {
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-transform: capitalize;
+	user-select: none;
+}
+
+input,
+label {
+	color: var(--primary-clr);
+}
+
+input,
+button,
+.container-inner {
+	border-radius: 10px;
+	outline: none;
+	border: 2px solid var(--primary-clr);
+}
+
+input {
+	outline: 1px solid transparent;
+	transition: 0.2s;
+
+	&::placeholder {
+		color: rgb(12 12 12 / 0.4);
+		transition: inherit;
+	}
+
+	&:focus {
+		border-color: transparent;
+		outline: 3px solid var(--primary-clr);
+	}
+
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.invalid-text {
+	margin-top: 0.5rem;
+	color: var(--red);
+}
+
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 2rem;
+}
+
+.container-inner {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 3rem;
+	padding: 2rem;
+	box-shadow: 0 10px 30px rgb(12 12 12 / 0.1);
+}
+
+@media (max-width: 720px) {
+	.container-inner {
+		grid-template-columns: 1fr;
+		padding: 0;
+		border: none;
+		box-shadow: none;
+	}
+}
+
+.form-box {
+	gap: 2rem;
+}
+
+.form-control {
+	position: relative;
+	gap: 0.5rem;
+
+	input {
+		color: var(--primary-clr);
+		padding: 0.6rem;
+		font-size: 1.1rem;
+	}
+}
+
+.view-password {
+	cursor: pointer;
+	padding: 0.5rem;
+	background: #fff;
+	border-radius: 10px;
+	position: absolute;
+	right: 10px;
+	top: -5px;
+	transform: translateY(50%);
+	font-size: 1.5rem;
+	justify-content: center;
+	align-items: center;
+}
+
+[name="view-pass"]:checked + .view-password i:first-child,
+[name="view-rpt-pass"]:checked + .view-password i:first-child {
+	display: none;
+}
+
+[name="view-pass"]:not(:checked) + .view-password i:last-child,
+[name="view-rpt-pass"]:not(:checked) + .view-password i:last-child {
+	display: none;
+}
+
+.btn {
+	padding: 1rem;
+	background: var(--primary-clr);
+	color: #f9f9f9;
+	font-size: 1.3rem;
+	cursor: pointer;
+	transition: 0.2s;
+	display: block;
+	width: 100%;
+
+	&:hover,
+	&:active,
+	&:focus {
+		opacity: 0.8;
+	}
+}
+
+.form-info {
+	gap: 3rem;
+	align-items: center;
+
+	h1 {
+		text-align: center;
+		font-size: 1.5rem;
+	}
+}
+
+.circle-cr {
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border: 3px solid var(--primary-clr);
+	width: 150px;
+	height: 150px;
+	border-radius: 100vw;
+}
+
+.percent {
+	font: bold normal 2rem "Courier New";
+}
+
+.circle-inner {
+	position: absolute;
+	inset: 0;
+	border: 6px solid #d1d1d1;
+	border-radius: inherit;
+	border-top-color: transparent;
+	border-left-color: transparent;
+	transform: scale(1.05);
+	z-index: 2;
+}
+
+.form-info-box {
+	border-radius: 10px;
+	background: var(--gray-900);
+	padding: 2rem 1.5rem;
+
+	ul {
+		gap: 1rem;
+	}
+}
+
+.checked {
+	opacity: 0.6;
+	text-decoration: line-through;
+}
+
+input:focus:invalid {
+	color: var(--red);
+	border-color: var(--red);
+	outline: none;
+
+	&::placeholder {
+		color: var(--red);
+	}
+}
