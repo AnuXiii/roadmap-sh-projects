@@ -30,5 +30,5 @@ This repository contains a collection of front-end projects inspired by the [Roa
 
 ## Bonuses
 
-1. [Progress Steps](https://github.com/AnuXiii/roadmap-sh-projects/15-progress-stpes)
-1. [Dark Mode](https://github.com/AnuXiii/roadmap-sh-projects/16-dark-mode)
+1. [Progress Steps](https://github.com/AnuXiii/roadmap-sh-projects/tree/main/15-progress-steps)
+1. [Dark Mode](https://github.com/AnuXiii/roadmap-sh-projects/tree/main/16-dark-mode)
